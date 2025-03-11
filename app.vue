@@ -9,8 +9,9 @@
       <yandex-map-control-button :settings="{ onClick: handleRollback  }">
         <icons-v-rollback class="icon" />
       </yandex-map-control-button>
-
     </yandex-map-controls>
+
+    <v-marker :marker="marker" :map="yaMap" />
     <YandexMapDefaultSchemeLayer />
     <YandexMapDefaultFeaturesLayer />
   </YandexMap>
@@ -23,6 +24,7 @@ import {
   YandexMapDefaultSchemeLayer,
   YandexMapDefaultFeaturesLayer, YandexMapControlButton, YandexMapControls
 } from 'vue-yandex-maps'
+import VMarker from "~/components/map/vMarker.vue";
 
 const { rollback } = useShift()
 const yaMap = shallowRef<null | YMap>(null)
@@ -32,6 +34,11 @@ const initialZoom = 15
 const handleRollback = () => {
   rollback( initialCoords, initialZoom, yaMap.value )
 }
+
+const marker = {
+  id: 1,
+  coordinates: [37.635000, 55.751500] as LngLat
+}
 </script>
 
 <style scoped>
@@ -39,5 +46,7 @@ const handleRollback = () => {
   width: 20px;
   height: 20px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
 </style>

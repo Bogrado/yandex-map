@@ -27,7 +27,7 @@ export const useShift = () => {
         })
     }
 
-    /** Шаги 1-3 — вычисления, куда сдвинуть эту несчастную карту от бедного инди разработчика: */
+    /** Шаги 1-3 — вычисления, куда сдвинуть карту */
     const latToPixelY = (latDeg: number, zoom: number): number => {
         const latRad = (latDeg * Math.PI) / 180
         const mercY = Math.log(Math.tan(latRad / 2 + Math.PI / 4))
