@@ -37,11 +37,11 @@ const { closeDropdown, toggleDropdown, isOpen } = useDropdown()
 const handleToggle = () => {
   toggleDropdown()
   if (isOpen.value && map) {
-    centerMapWithPopup(marker.coordinates, -150, map)
+    centerMapWithPopup(marker.coordinates, -120, map)
     return
   }
   if (!isOpen.value && map) {
-    centerMapWithPopup(marker.coordinates, 0, map)
+    centerMapWithPopup(marker.coordinates, -20, map)
   }
 }
 
