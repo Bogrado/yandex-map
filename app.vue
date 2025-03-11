@@ -1,19 +1,19 @@
 <template>
-<YandexMap
-    v-model="yaMap"
-    :settings="{ location: { center: initialCoords, zoom: initialZoom }}"
-    width="100%"
-    height="950px"
->
-  <yandex-map-controls :settings="{ position: 'right' }">
-    <yandex-map-control-button :settings="{ onClick: handleRollback  }">
-      <icons-v-rollback class="icon" />
-    </yandex-map-control-button>
+  <YandexMap
+      v-model="yaMap"
+      :settings="{ location: { center: initialCoords, zoom: initialZoom }}"
+      width="100%"
+      height="950px"
+  >
+    <yandex-map-controls :settings="{ position: 'right' }">
+      <yandex-map-control-button :settings="{ onClick: handleRollback  }">
+        <icons-v-rollback class="icon" />
+      </yandex-map-control-button>
 
-  </yandex-map-controls>
-  <YandexMapDefaultSchemeLayer />
-  <YandexMapDefaultFeaturesLayer />
-</YandexMap>
+    </yandex-map-controls>
+    <YandexMapDefaultSchemeLayer />
+    <YandexMapDefaultFeaturesLayer />
+  </YandexMap>
 </template>
 
 <script setup lang="ts">
